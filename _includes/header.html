@@ -1,0 +1,31 @@
+<div class="mdc-toolbar-container">
+  <div class="mdc-layout-grid" style="--mdc-layout-grid-margin: 0;">
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 mdc-layout-grid__cell--span-0-phone">
+    </div>
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8 mdc-layout-grid__cell--span-4-phone">
+      {% assign default_paths = site.pages | map: "path" %}
+      {% assign page_paths = site.header_pages | default: default_paths %}
+      <header class="mdc-toolbar">
+        <div class="mdc-toolbar__row">
+          <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+            <a class="mdc-toolbar__title" href="{{ "/" | relative_url }}">
+              <img alt="GREATER KNOWN" src="{{ site.url }}/assets/img/gk-logo.svg" style="height: 32px;" />
+            </a>
+          </section>
+          <section class="mdc-toolbar__section mdc-toolbar__section--align-end">
+            {% if page_paths %}
+              {% for path in page_paths %}
+                {% assign my_page = site.pages | where: "path", path | first %}
+                {% if my_page.title %}
+                  <a href="{{ my_page.url | relative_url }}" class="mdc-toolbar__navigation_link" aria-label="{{ my_page.title | escape }}">{{ my_page.title | escape }}</a>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </section>
+        </div>
+      </header>
+    </div>
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 mdc-layout-grid__cell--span-0-phone">
+    </div>
+  </div>
+</div>

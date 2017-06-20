@@ -1,0 +1,12 @@
+<footer class="mdc-footer">
+  <div class="mdc-layout-grid" style="--mdc-layout-grid-margin: 16px;">
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 mdc-layout-grid__cell--span-0-phone">
+    </div>
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-4-phone">
+      <span><small>Site content &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time> {{ site.title | escape }}</small></span>
+    </div>
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-4-phone">
+      <span><small>{{ site.description | escape }} Read more <a href="{{ site.baseurl }}{% link about.md %}" aria-label="About">about us</a>.</small></span>
+    </div>
+  </div>
+</footer>

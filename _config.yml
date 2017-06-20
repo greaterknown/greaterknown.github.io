@@ -1,0 +1,53 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Greater Known
+email: stevo@greaterknown.com
+description: > # this means to ignore newlines until "baseurl:"
+  Greater Known is a web and mobile development studio in Toronto, Canada. We're your hands-on technology partner to your company, helping you build products and services and iterate towards product-market-fit.
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://greaterknown.com" # the base hostname & protocol for your site, e.g. http://example.com
+google_analytics: "XXX"  # TODO stevo
+twitter_username: thegreaterknown
+github_username:  thegreaterknown
+clients:
+  this_space_works:
+    name: "This Space Works"
+    logo: "tsw-logo.svg"
+    url: "http://thisspaceworks.com"
+    about: Fabulous work spaces all over the city available by the hour or by the day.
+  young_offenders:
+    name: "Young Offenders"
+    logo: "yo-logo.svg"
+    url: "http://youngoffenders.co"
+    about: A collective of imaginative creators who produce art for brave minds.
+
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+header_pages:
+- work.md
+- contact.md
+
+# Build settings
+markdown: kramdown
+gems:
+  - jekyll-feed
+  - material_components_web-sass
+  - jekyll-seo-tag
+  - animate-scss
+exclude:
+  - Gemfile
+  - Gemfile.lock

@@ -1,0 +1,23 @@
+<svg id="bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1130 720">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 200px;
+        fill: #ecda13;
+        font-family: Lato;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        letter-spacing: -7px;
+      }
+
+      .cls-3 {
+        letter-spacing: -5px;
+      }
+    </style>
+  </defs>
+  <title>yo-logo</title>
+  <rect width="1130" height="720"/>
+  <text class="cls-1" transform="translate(404.05 428.1)"><tspan class="cls-2">Y</tspan><tspan class="cls-3" x="122.9" y="0">O</tspan><tspan x="277.6" y="0">.</tspan></text>
+</svg>

@@ -1,0 +1,250 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "@material/button/mdc-button";
+@import "@material/card/mdc-card";
+@import "@material/layout-grid/mdc-layout-grid";
+@import "@material/toolbar/mdc-toolbar";
+@import "@material/theme/mixins";
+$mdc-theme-primary: #1342dc;
+$mdc-theme-accent: #651fff;
+$mdc-theme-background: #fff;
+@import "@material/theme/mdc-theme";
+
+@import 'animate';
+@import 'animate/fadeInUp';
+
+// Variables.
+
+$root-font-family: 'Lato', sans-serif;
+$root-font-size: 16px;
+$root-font-weight: 400;
+$root-line-height: 1.5;
+$large-font-size: 19px;
+$dark-grey: #e0e0e0;
+$light-grey: #f5f5f5;
+$grid-gutter: 16px;
+$mdc-toolbar-row-height: 96px;
+
+// Base.
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: $root-font-family;
+  font-size: $root-font-size;
+  font-weight: $root-font-weight;
+  line-height: $root-line-height;
+  @include mdc-layout-grid-media-query_(desktop) {
+    font-size: $large-font-size;
+  }
+}
+body {
+  @include mdc-theme-prop(color, text-primary-on-background);
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-weight: 400;
+  line-height: 1.25;
+  text-rendering: optimizeLegibility;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+h3 {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+}
+h4, h5, h6 {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+p {
+  margin-top: 0;
+  margin-bottom: $grid-gutter;
+}
+a {
+  @include mdc-theme-prop(color, primary);
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+hr {
+  border: solid $dark-grey;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 1em 0;
+  height: 0;
+}
+blockquote {
+  font-style: italic;
+  color: #3F3F3F;
+  border-width: 0 0 0 6px;
+  border-style: solid;
+  @include mdc-theme-prop(border-color, primary);
+  padding: 0 0 0 16px;
+  margin-left: 0;
+  margin-right: 0;
+
+  .small, footer, small {
+    color: #777;
+    &:before {
+      content: '\2014 \00A0';
+    }
+  }
+}
+dt {
+  font-weight: 700;
+}
+dd {
+  margin-left: 0;
+  margin-bottom: $grid-gutter;
+}
+input, textarea {
+  font-size: 1rem;
+}
+img {
+  max-width: 100%;
+  margin: 0;
+  display: block;
+}
+main {
+  min-height: calc(100vh - #{$mdc-toolbar-row-height});
+  @include mdc-layout-grid-media-query_(phone) {
+    min-height: calc(100vh - #{$mdc-toolbar-mobile-row-height});
+  }
+}
+
+
+// Custom.
+
+.mdc-typography--display4 {
+  font-size: 3em;
+}
+.mdc-toolbar-container {
+  background-color: #fff;
+}
+.mdc-toolbar {
+  background-color: inherit;
+  a.mdc-toolbar__navigation_link {
+    font-family: $root-font-family;
+    color: #222222;
+    transition: all .2s ease-in;
+    display: block;
+    line-height: $mdc-toolbar-row-height;
+    padding: 0 1em;
+    @include mdc-layout-grid-media-query_(phone) {
+      line-height: $mdc-toolbar-mobile-row-height;
+    }
+    &:first-of-type {
+      padding: 0 1em 0 0;
+    }
+    &:last-of-type {
+      padding: 0 0 0 1em;
+    }
+    &:hover,
+    &:focus {
+      @include mdc-theme-prop(color, primary);
+      text-decoration: none;
+    }
+  }
+}
+.mdc-toolbar__title {
+  font-family: $root-font-family;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  line-height: $mdc-toolbar-row-height;
+
+  color: #222222;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+.mdc-toolbar__row {
+  padding: 0 16px;
+  align-items: center;
+}
+.mdc-layout-grid__cell {
+  @each $size in map-keys($mdc-layout-grid-columns) {
+    @include mdc-layout-grid-media-query_($size) {
+      $span: 0;
+      @at-root .mdc-layout-grid__cell--span-#{$span},
+        .mdc-layout-grid__cell--span-#{$span}-#{$size}.mdc-layout-grid__cell--span-#{$span}-#{$size} {
+        display: none;
+      }
+    }
+  }
+}
+// .mdc-list {
+//   font-family: $root-font-family;
+// }
+.mdc-footer {
+  background-color: #fafafa;
+  border: 1px solid $dark-grey;
+}
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.pull-right {
+  float: right;
+}
+.hero {
+  text-align: center;
+  height: calc(100vh - #{$mdc-toolbar-row-height} - 144px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  @include mdc-layout-grid-media-query_(phone) {
+    height: calc(100vh - #{$mdc-toolbar-mobile-row-height} - 144px);
+  }
+}
+.post-section {
+  border-bottom: 1px solid darken($light-grey, 10%);
+}
+.mdc-card {
+  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+.mdc-card__title--large {
+  font-family: inherit;
+}
+.mdc-button {
+  font-family: inherit;
+  height: 48px;
+  font-size: 18px;
+  line-height: 48px;
+}
+a.mdc-button {
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+.mdc-button--raised {
+  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}

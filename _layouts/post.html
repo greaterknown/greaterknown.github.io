@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<article>
+  <header>
+    <div class="mdc-layout-grid">
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 mdc-layout-grid__cell--span-0-phone">
+      </div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8 mdc-layout-grid__cell--span-4-phone">
+        <h1 itemprop="name headline">{{ page.title | escape }}</h1>
+        <h3>{{ page.summary }}</h3>
+        {% if page.tags %}
+          <p><small>Services: {{ page.tags | array_to_sentence_string | replace:'_',' ' }}</small></p>
+        {% endif %}
+        {% if page.client and page.website %}
+          <p><a href="{{ page.website }}">{{ page.client | escape }}</a></p>
+        {% endif %}
+        {% if page.client and page.website == null %}
+          <p>{{ page.client | escape }}</p>
+        {% endif %}
+      </div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 mdc-layout-grid__cell--span-0-phone">
+      </div>
+    </div>
+  </header>
+  <div>
+    {{ content }}
+    {% include contact.html %}
+  </div>
+</article>

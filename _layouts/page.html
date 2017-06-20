@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<article>
+  <header>
+    <div class="mdc-layout-grid" style="--mdc-layout-grid-margin: 0 16px;">
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 mdc-layout-grid__cell--span-0-phone">
+      </div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8 mdc-layout-grid__cell--span-4-phone">
+        <h1>{{ page.title | escape }}</h1>
+        {% if page.description %}
+         <h2>{{ page.description }}</h2>
+        {% endif %}
+        <hr />
+      </div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 mdc-layout-grid__cell--span-0-phone">
+      </div>
+    </div>
+  </header>
+  <div class="mdc-layout-grid" style="--mdc-layout-grid-margin: 0 16px;">
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 mdc-layout-grid__cell--span-0-phone">
+    </div>
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8 mdc-layout-grid__cell--span-4-phone">
+      {{ content }}
+    </div>
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 mdc-layout-grid__cell--span-0-phone">
+    </div>
+  </div>
+</article>
