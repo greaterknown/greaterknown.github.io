@@ -5,7 +5,7 @@ description: Experienced in building products and services in various domains li
 permalink: /work/
 ---
 
-<article class="mdc-layout-grid" style="--mdc-layout-grid-margin: 16px 0;">
+<article class="mdc-layout-grid" style="--mdc-layout-grid-margin: 0 0 16px 0;">
 {% for client in site.clients %}
   <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-4-phone">
     <img alt="{{ post.client }}" src="{{ site.url }}/assets/img/{{ client[1].logo }}" style="border: 1px solid #e4e4e4;" />
