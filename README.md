@@ -4,7 +4,7 @@ This is the data for my home page.
 
 It is automatically transformed by [Jekyll](http://github.com/mojombo/jekyll) into a static site whenever I push this repository to GitHub.
 
-This site uses Łukasz Dziedzic's Open Sans, mdo's [poole](https://github.com/poole/poole) CSS base styles, Google's [MDC-Web](https://github.com/rubysamurai/material_components_web-sass) CSS styles, and Google's [Material icons](https://material.io/icons/).
+This site uses Łukasz Dziedzic's Open Sans, mdo's [poole](https://github.com/poole/poole) CSS base & type styles, Google's [MDC-Web](https://github.com/rubysamurai/material_components_web-sass) CSS styles, and Google's [Material icons](https://material.io/icons/).
 
 ## License
 
