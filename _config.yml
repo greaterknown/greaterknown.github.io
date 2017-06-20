@@ -22,7 +22,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://greaterknown.com" # the base hostname & protocol for your site, e.g. http://example.com
 google_analytics: "XXX"  # TODO stevo
 twitter_username: thegreaterknown
-github_username:  thegreaterknown
+github_username:  greaterknown
 clients:
   this_space_works:
     name: "This Space Works"
@@ -45,9 +45,7 @@ header_pages:
 markdown: kramdown
 gems:
   - jekyll-feed
-  - material_components_web-sass
   - jekyll-seo-tag
-  - animate-scss
 exclude:
   - Gemfile
   - Gemfile.lock
